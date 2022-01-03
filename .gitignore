@@ -3,6 +3,16 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Project empy dirs
+# stats/
+# !stats/.keep
+*.csv
+ffs-env/
+
+# MacOS
+.DS_Store
+.vscode/
+
 # C extensions
 *.so
 
