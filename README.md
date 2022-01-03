@@ -13,7 +13,7 @@ If used in scientific publication, please site the method and library as follows
 }
 
 ## Requirements
- >=Python3.6
+Python>=3.6
 
 Use the "requirements.txt" file to install all the necessary libraries. 
 
