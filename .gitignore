@@ -6,7 +6,7 @@ __pycache__/
 # Project empy dirs
 # stats/
 # !stats/.keep
-*.csv
+#*.csv
 ffs-env/
 
 # MacOS
