@@ -8,7 +8,7 @@ import random as rnd
 
 def load_voxel(return_Xy=False):
     raw_data = pd.read_csv(
-        "/home/lorenzo/data/voxel/DataSruct.csv", delimiter=' ')
+        "../data/voxel/DataSruct.csv", delimiter=' ')
     if return_Xy:
         # separate patterns and labels
 
@@ -18,16 +18,6 @@ def load_voxel(return_Xy=False):
     return raw_data
 
 
-def load_voxel1(return_Xy=False):
-    raw_data = pd.read_csv(
-        "/home/lorenzo/data/voxel1/DataStruct.csv", delimiter=' ')
-    if return_Xy:
-        # separate patterns and labels
-
-        X_all = raw_data.iloc[:, :-4]
-        y_all = raw_data.iloc[:, [0, -4]]
-        return X_all, y_all
-    return raw_data
 
 
 def load_wesad(decentralised=False, train_sbj=['S5', 'S14'], test_sbj=['S7'], sub_size=3000000, shuffled=False):

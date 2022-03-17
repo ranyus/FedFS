@@ -12,13 +12,28 @@ import federated_feature_selection as ffs
 
 def main():
 
-    # BREAST CANCER, COVTYPE
-    X_all,y_all=load_breast_cancer(return_X_y=True)
-    # X_all, y_all = fetch_covtype(return_X_y=True)
-    X_train, _, y_train, _ = train_test_split(
-        X_all, y_all, test_size=0.20, random_state=123)
-    num_classes = np.unique(y_train).shape[0]
+    # +++ BREAST CANCER, COVTYPE
+    # X_all,y_all=load_breast_cancer(return_X_y=True)
+    # # X_all, y_all = fetch_covtype(return_X_y=True)
+    # X_train, _, y_train, _ = train_test_split(
+    #     X_all, y_all, test_size=0.20, random_state=123)
+    # num_classes = np.unique(y_train).shape[0]
+    # +++
 
+    # +++ VOXEL (MAV) DATASET PREPARATION
+    # X_all, y_all = dut.load_voxel(return_Xy=True)
+
+    # # split train test
+    # Xtrain, Xtest, ytrain, ytest = train_test_split(
+    #     X_all, y_all, test_size=0.20)
+
+    # # restore time
+    # y_train = np.array(ytrain.sort_values(by='timestamps').iloc[:, 1])
+    # y_test = np.array(ytest.sort_values(by='timestamps').iloc[:, 1])
+    # X_train = np.array(Xtrain.sort_values(by='timestamps').iloc[:, 1:])
+    # X_test = np.array(Xtest.sort_values(by='timestamps').iloc[:, 1:])
+    # num_classes = np.unique(y_train).shape[0]
+    # +++
 
     # Distribute dataset on the workers. IID data partitioning [FOR ALL THE ABOVE DATASETS]
     num_workers = 10
@@ -54,7 +69,8 @@ def main():
     # NN architecture
     njobs = 1
 
-    log_path = '../stats/fedfs-bc/'
+    # log_path = '../stats/fedfs-bc/'
+    log_path = '../stats/fedfs-mav/'
     if not os.path.isdir(log_path):
         print('Creating log dir: {}'.format(log_path))
         os.mkdir(log_path)
